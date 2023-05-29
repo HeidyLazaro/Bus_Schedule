@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = arrayOf(BusSchedule::class), version = 1, exportSchema = false)
+@Database(entities = arrayOf(BusSchedule::class), version = 1)
 abstract class DatabaseBusSchedule : RoomDatabase(){
 
     abstract fun busScheduleDao(): DaoBusSchedule
