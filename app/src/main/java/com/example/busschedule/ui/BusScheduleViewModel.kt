@@ -20,10 +20,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProvider.AndroidViewModelFactory.Companion.APPLICATION_KEY
 import androidx.lifecycle.viewmodel.initializer
 import androidx.lifecycle.viewmodel.viewModelFactory
+import com.example.busschedule.AppBusSchedule
 import com.example.busschedule.data.BusSchedule
 import com.example.busschedule.data.DaoBusSchedule
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 class BusScheduleViewModel(private val busScheduleDao: DaoBusSchedule): ViewModel() {
 
@@ -41,7 +41,7 @@ class BusScheduleViewModel(private val busScheduleDao: DaoBusSchedule): ViewMode
     // Get example bus schedule by stop
     fun getScheduleFor(stopName: String): Flow<List<BusSchedule>> = busScheduleDao.getByStopName(stopName
         /*listOf(
-            BusSchedule(
+            AppBusSchedule(
                 1,
                 "Example Street",
                 0
@@ -53,7 +53,7 @@ class BusScheduleViewModel(private val busScheduleDao: DaoBusSchedule): ViewMode
         val factory : ViewModelProvider.Factory = viewModelFactory {
             initializer {
                // BusScheduleViewModel()
-                val application = (this[APPLICATION_KEY] as BusScheduleApplication)
+                val application = (this[APPLICATION_KEY] as AppBusSchedule)
                 BusScheduleViewModel(application.database.busScheduleDao())
             }
         }

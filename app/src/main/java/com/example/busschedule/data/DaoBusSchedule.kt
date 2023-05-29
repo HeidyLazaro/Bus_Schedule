@@ -11,14 +11,14 @@ import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface DaoBusSchedule {
-    @Insert(onConflict = OnConflictStrategy.IGNORE)
+    /*@Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun insert(item: ClipData.Item)
 
     @Update
     suspend fun update(item: ClipData.Item)
 
     @Delete
-    suspend fun delete(item: ClipData.Item)
+    suspend fun delete(item: ClipData.Item)*/
 
     @Query(
         """
