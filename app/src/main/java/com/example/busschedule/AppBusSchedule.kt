@@ -3,7 +3,6 @@ package com.example.busschedule
 import android.app.Application
 import com.example.busschedule.data.DatabaseBusSchedule
 
-class AppBusSchedule : Application() {
-    val database: DatabaseBusSchedule by lazy {
-        DatabaseBusSchedule.getDatabase(this) }
+class BusScheduleApplication: Application() {
+    val database: DatabaseBusSchedule by lazy { DatabaseBusSchedule.getDatabase(this) }
 }
